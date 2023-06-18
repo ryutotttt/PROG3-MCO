@@ -1,2 +1,8 @@
-public class Payment {}
-//AA
+public class Payment {
+
+  private float payAmountReceived;
+
+  public float getPayAmountReceived() {
+    return payAmountReceived;
+  }
+}
