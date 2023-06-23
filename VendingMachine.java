@@ -1,8 +1,11 @@
 public class VendingMachine {
 
-  private Slot[] slots;
-  private Inventory inventory;
-  private Payment payment;
+  private ItemSlot[] slots;
+  private Item[] items;
+  private Payment[] payment;
+  private TransactionSummary[] transaction;
+  private ItemSlot[] startingInventory;
+  private ItemSlot[] endingInventory;
+
 }
 
-//AA
