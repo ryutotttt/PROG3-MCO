@@ -44,7 +44,20 @@ public class ItemSlot {
     
 
     public void restock(int quantity){
+        Scanner scRestock = new Scanner(System.in);
         
+        int restockQuantity;
+        
+        if (quantity < 10 || quantity == 0)
+        {
+            System.out.print("How many do you want? :");
+            restockQuantity = scRestock.nextInt();
+            scRestock.close();
+            
+            this.quantity += restockQuantity;
+
+            
+        }
     }
 
     public void setQuantity(int quantity){
