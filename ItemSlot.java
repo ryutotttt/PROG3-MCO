@@ -1,13 +1,21 @@
+import java.util.Scanner;
+
 public class ItemSlot {
     private Item[] items;
     private int quantity;
     private int capacity;
 
-    public Item[] getItem(){
+    public ItemSlot(int quantity){
+        this.capacity = 10;
+        this.quantity = quantity;
+        this.items = new Item[capacity];
+    }
+
+    public Item[] getItems(){
         return items;
     }
 
-    public int getQuanty(){
+    public int getQuantity(){
         return quantity;
     }
 
@@ -15,20 +23,32 @@ public class ItemSlot {
         return capacity;
     }
 
-    public void ItemSlots(int quantity, int capacity){
+    public void addItem(Item items){
+        Scanner scAItem = new Scanner(System.in);
         
-        this.quantity = 0;
-        this.capacity = capacity;
+        String itemName = items.getName(); 
+        int calories = items.getCalories();
 
+        //float price;
+
+        System.out.println("Enter the name of an item to be added: ");
+        itemName = scAItem.next();
+        items.setName(itemName);
+        System.out.println("Enter Calories: ");
+        calories = scAItem.nextInt();
+        items.setCalories(calories);
+        /*System.out.println("Enter Price: ");
+        price = scAItem.nextFloat();*/
+        scAItem.close();
     }
-
-    public void addItem(Item item){
-
-    }
+    
 
     public void restock(int quantity){
         
     }
+
+    public void setQuantity(int quantity){
+        
+    }
+
 }
-
-

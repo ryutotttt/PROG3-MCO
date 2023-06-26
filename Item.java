@@ -10,6 +10,10 @@ public class Item {
     this.price = price;
   }
 
+  /*public Item(String name2) {
+    this.name = name2;
+  }*/
+
   public String getName() {
     return name;
   }
