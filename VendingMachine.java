@@ -63,8 +63,6 @@ public class VendingMachine {
       slot.setQuantity(quantity - 1); // ?deduct quantity
 
       System.out.println("Dispensing");
-
-
     }
     
     
@@ -87,7 +85,7 @@ public class VendingMachine {
   public static void restockItem(ItemSlot slot, int quantity){}
 
   public void changeItem(){
-
+    
   }
 
   public void skipItem(){}
@@ -126,7 +124,46 @@ public class VendingMachine {
 
   }
 
-  public void replenishMoney(Denomination denomination){}
+  public void replenishMoney(Denomination denomination){
+    Scanner scRMoney = new Scanner(System.in);
+
+    int denoChoice;
+    int dValue = denomination.getValue();
+    float[] mMoney = denomination.getMoney();
+    Denomination deno = new Denomination();
+    if(dValue == 0 || dValue < 20){
+      System.out.println("Select a Denomination");
+     
+      denoChoice = scRMoney.nextInt();
+      switch(denoChoice)
+      {
+        case 1: 
+          System.out.println("Coins Replenish");
+          
+
+          for(int i=0 ;i < mMoney[0]; ++i){
+            deno.setType("Coins");
+            dValue = scRMoney.nextInt();
+            mMoney[i] = scRMoney.nextFloat(); 
+          }
+        break;
+
+        case 2:
+        System.out.println("Bills Replenish");
+          
+
+        for(int i=0 ;i < mMoney[0]; ++i){
+          deno.setType("Bills");
+          dValue = scRMoney.nextInt();
+          mMoney[i] = scRMoney.nextFloat(); 
+        }
+        break;
+      }
+    }
+
+
+    scRMoney.close();
+  }
 
   public ItemSlot[] getStartingInventory(){
     return startingInventory;

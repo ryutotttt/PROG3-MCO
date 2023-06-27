@@ -1,10 +1,11 @@
-public class Denomination {
+  public class Denomination {
 
   private String type;
-  private float value;
+  private float[] money;
+  private int value;
 
-  public void denomination(String type, float value){
-    this.type = type;
+  public void denomination(String type, int value){
+    this.type = "";
     this.value = value;
   }
   
@@ -13,10 +14,14 @@ public class Denomination {
     return type;
   }
 
-  public float getValue(){
+  public int getValue(){
     return value;
   }
 
+  public float[] getMoney(){
+    return money;
+  }
   public void setType(String type){}
-  public void setValue(){}
+  public void setValue(int value){}
+  public void setMoney(float[] money){}
 }
